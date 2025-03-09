@@ -141,7 +141,7 @@ Each dimension provides descriptive attributes to support analytical queries.
 - Removing excess fields **reduces storage & improves performance**.  
 - Simplifies **joins & aggregations**.
 
-![Minimalized_Star Schema](docs/minimalized-star-schema.png) 
+<img src="docs/minimalized-star-schema.png" alt="Minimalized Star Schema" width="1024"> 
 
 #### **Fact Table**: `fact_lineorder`  
 | Column         | Type          | Description          |
