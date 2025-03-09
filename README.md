@@ -3,7 +3,7 @@
 ## **Overview**  
 This project demonstrates an **ETL (Extract, Transform, Load) pipeline** for converting an **OLTP relational schema** into an **OLAP star schema** using **Apache NiFi**, **MySQL**, and **Apache Spark**. The transformation optimizes query performance for analytical processing.
 
-Full report can be found ![here](docs/report.pdf). 
+Full report can be found [here](docs/report.pdf). 
 
 ## **Technologies Used**  
 - **MySQL** – Source OLTP database  
