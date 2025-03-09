@@ -127,7 +127,7 @@ Each dimension provides descriptive attributes to support analytical queries.
 |----------|--------|---------------------------------|
 | datekey  | INT  | Unique date identifier         |
 | fulldate | DATE    | Full date                      |
-| year     | YEAR    | Year value                     |
+| year     | SMALLINT    | Year value                     |
 | month    | SMALLINT| Month value                    |
 | day      | SMALLINT| Day value                      |
 
