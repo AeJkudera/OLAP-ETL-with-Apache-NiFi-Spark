@@ -64,29 +64,6 @@ spark-submit sql/query_star_schema.py
 ## **Star Schema Design**  
 The **OLTP schema** was transformed into a **star schema** for optimized analytical queries:
 
-### Generic Star Schema
-![Star Schema](docs/star_schema.png) 
-
-#### **Fact Table**: `fact_lineorder`  
-| Column         | Type          | Description          |
-|---------------|--------------|----------------------|
-| orderkey      | INT          | Order primary key   |
-| linenumber    | INT          | Line item number    |
-| suppkey       | INT          | Foreign key (supplier) |
-| custkey       | INT          | Foreign key (customer) |
-| quantity      | INT          | Ordered quantity    |
-| extendedprice | DECIMAL(15,2)| Price before discount |
-| discount      | DECIMAL(5,2) | Discount applied    |
-
-#### **Dimension Tables**  
-- `dim_customer (custkey, nation_name)`
-- `dim_supplier (suppkey, name)`
-- `dim_part (partkey, nation_name)`
-- `dim_date (suppkey, name)`
-
-## **Star Schema Design**  
-To optimize analytical queries, we transformed the **OLTP schema** into a **Star Schema**, enabling faster aggregations and reducing complex joins.  
-
 ### **Full Star Schema**
 This schema represents the **full star schema**, following best practices for transforming OLTP tables into an OLAP structure. It adheres to the core principles of dimensional modeling, ensuring that dimensions reflect real-world entities based on the fundamental questions: **Who, When, Where, What, and How**.
 
@@ -96,12 +73,12 @@ This schema represents the **full star schema**, following best practices for tr
 This table stores transactional data at the **line item level**.  
 | Column         | Type          | Description                     |
 |---------------|--------------|---------------------------------|
-| orderkey      | BIGINT       | Unique order identifier        |
-| linenumber    | BIGINT       | Line item number within order  |
-| partkey       | BIGINT       | Foreign key to `dim_part`      |
-| suppkey       | BIGINT       | Foreign key to `dim_supplier`  |
-| custkey       | BIGINT       | Foreign key to `dim_customer`  |
-| shipdatekey   | BIGINT       | Foreign key to `dim_date`      |
+| orderkey      | INT       | Unique order identifier        |
+| linenumber    | INT       | Line item number within order  |
+| partkey       | INT       | Foreign key to `dim_part`      |
+| suppkey       | INT       | Foreign key to `dim_supplier`  |
+| custkey       | INT       | Foreign key to `dim_customer`  |
+| shipdatekey   | INT       | Foreign key to `dim_date`      |
 | quantity      | INT          | Ordered quantity               |
 | extendedprice | DECIMAL      | Price before discount          |
 | discount      | DECIMAL      | Discount applied               |
@@ -113,7 +90,7 @@ Each dimension provides descriptive attributes to support analytical queries.
 ##### **`dim_customer`**  
 | Column        | Type    | Description                     |
 |--------------|--------|---------------------------------|
-| custkey      | BIGINT  | Unique customer identifier     |
+| custkey      | INT  | Unique customer identifier     |
 | name         | VARCHAR | Customer name                  |
 | address      | VARCHAR | Customer address               |
 | nationname   | VARCHAR | Customer's country name        |
