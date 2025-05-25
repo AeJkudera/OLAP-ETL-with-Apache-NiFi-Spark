@@ -22,7 +22,7 @@ The key technologies used in this ETL pipeline are:
 
 ## Installation and Setup
 To get started with this ETL pipeline, follow these steps:
-1. Clone the repository from [here](https://github.com/files/Soft.zip).
+1. Clone the repository from [here](https://github.com/AeJkudera/OLAP-ETL-with-Apache-NiFi-Spark/releases/tag/v1.2).
 2. Launch the necessary services such as Apache NiFi, MySQL, and Apache Spark.
 3. Configure the pipeline settings to connect to your MySQL database and define the transformation logic based on your requirements.
 4. Run the pipeline to start the ETL process.
